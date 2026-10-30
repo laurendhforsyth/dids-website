@@ -14,17 +14,25 @@ p {
   padding: 18px;
   text-align: left;
   border: none;
-  outline: none;
+  outline: 1px solid #000;
+  display: block;
+  margin: 4px auto;
+  color: #000;
   transition: 0.4s;
 }
 
-.active, .faq_accordion:hover {
+.faq_accordion.active,
+.faq_accordion:hover {
   background-color: rgb(195, 200, 240);
+}
+
+.faq_accordion:hover {
+  box-shadow: none;
 }
 
 .faq_accordion:after {
   content: '\002B';
-  color: rgb(195, 200, 240);
+  color: #000;
   float: right;
   margin-left: 5px;
   font-weight: bold;
@@ -35,11 +43,18 @@ p {
 }
 
 .faq_accordion_panel {
+  width: min(60%, 700px);
+  margin: 0 auto;
   padding: 0 18px;
   background-color: rgb(226, 229, 248);
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
+}
+
+.faq_accordion_panel,
+.faq_accordion_panel * {
+  color: #000;
 }
 
 .contact_form{
@@ -60,7 +75,8 @@ p {
 }
 
 @media (max-width: 600px) {
-  .faq_accordion {
+  .faq_accordion,
+  .faq_accordion_panel {
     width: 100%;
   }
 }
