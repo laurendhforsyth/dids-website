@@ -21,7 +21,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 100px;
+  gap: 16px;
+  padding: 10px clamp(16px, calc(50vw - 583px), 100px);
   background: linear-gradient(0deg, var(--main-light-blue), var(--main-pink));
 }
 
@@ -30,7 +31,7 @@ body {
 }
 
 .dids-icon {
-  width: 150px;
+  width: min(150px, 100%);
   height: auto;
 }
 
@@ -47,16 +48,39 @@ body {
   gap: 20px;
 }
 
+.header-main-links > a {
+  white-space: nowrap;
+}
+
+.header-contact-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-toggle {
+  display: none;
+}
+
 .main_body {
-  padding: 100px 300px;
+  padding: clamp(40px, 7vw, 100px) clamp(16px, calc(50vw - 383px), 300px);
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  align-items: start;
+  gap: 32px;
+  padding: 10px clamp(16px, calc(50vw - 383px), 300px);
   color: var(--main-dark-blue);
+}
+
+.footer section {
+  min-width: 0;
+}
+
+.footer iframe {
+  width: min(500px, 100%);
+  max-width: 100%;
 }
 
 .footer-link {
@@ -73,7 +97,7 @@ a {
 
 h1 {
   padding: 25px 0px 50px 0px;
-  font-size: 50px;
+  font-size: clamp(32px, 4vw, 50px);
 }
 
 h3 {
@@ -101,4 +125,68 @@ button {
 
 button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+@media (max-width: 960px) {
+  .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    justify-content: initial;
+    align-items: center;
+  }
+
+  .header-dids-icon {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 8px 0;
+  }
+
+  .header-dids-icon .dids-icon {
+    width: min(130px, 100%);
+  }
+
+  .header-main-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  .header.mobile-nav-ready:not(.mobile-nav-open) .header-main-links {
+    display: none;
+  }
+
+  .header-nav-toggle {
+    display: inline-block;
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 44px;
+    padding: 10px 14px;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  .header-main-links > a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 4px;
+  }
+
+  .header-contact-icons {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .header-icon {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

@@ -1,17 +1,38 @@
 .home_body_text {
-  align-items: left;
-  width: 600px;
+  flex: 1 1 320px;
+  width: auto;
   height: auto;
+  min-width: 0;
 }
 
 .main_body {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 32px;
 }
 
 .home_body_image {
-  align-items: center;
+  flex: 1 1 320px;
   padding: 50px 10px;
   width: 50%;
+  max-width: 600px;
   height: auto;
+}
+
+@media (max-width: 700px) {
+  .main_body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home_body_text,
+  .home_body_image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .home_body_image {
+    padding: 16px 0;
+  }
 }
