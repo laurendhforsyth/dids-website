@@ -17,10 +17,10 @@
   height: auto;
 }
 
-img {
+.grid_item img {
   padding: 15px;
 }
 
-a {
+.main_body a {
   text-decoration: underline;
 }

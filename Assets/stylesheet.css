@@ -13,6 +13,10 @@
   color: var(--main-dark-blue);
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: var(--main-light-blue);
 }
