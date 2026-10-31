@@ -20,7 +20,141 @@
   height: auto;
 }
 
+.carousel {
+  margin: 24px 0 40px;
+  padding: 0 clamp(16px, calc(50vw - 383px), 300px);
+  box-sizing: border-box;
+}
+
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 80vh;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  background: #111;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Outgoing slide stays fully opaque underneath while the incoming one fades in on top */
+.carousel-slide.previous {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+  transition: opacity 0.6s ease;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 44px;
+  height: 44px;
+  padding: 0 0 4px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-arrow.prev {
+  left: 10px;
+}
+
+.carousel-arrow.next {
+  right: 10px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-slide img.carousel-placeholder {
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.carousel-caption small {
+  opacity: 0.75;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #aaa;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: #333;
+  transform: scale(1.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: none;
+  }
+}
+
 @media (max-width: 700px) {
+  .carousel {
+    padding: 0;
+  }
+
+  .carousel-slides {
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+  }
+
   .main_body {
     flex-direction: column;
     align-items: stretch;
