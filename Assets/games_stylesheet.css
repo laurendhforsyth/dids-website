@@ -24,3 +24,7 @@
 .main_body a {
   text-decoration: underline;
 }
+
+.main_body > h1 {
+  grid-column: 1 / -1;
+}

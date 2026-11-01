@@ -20,43 +20,43 @@
     />
     <script defer src="../Assets/contact_javascript.js"></script>
     <script defer src="../Assets/responsive_navigation.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-10TRMCFN3K");
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-10TRMCFN3K");
-  </script>
   <body>
-    <body>
-      <div class="header">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+      <header class="header">
         <div class="header-dids-icon">
           <a href="../"
+            aria-label="Drowning In Dreams Studios home"
             ><img
               src="../Assets/Images/logo-transparent-png.png"
               class="dids-icon"
+              alt=""
           /></a>
         </div>
-        <div class="header-main-links">
+        <nav class="header-main-links" aria-label="Primary">
           <a href="../">Home</a>
           <div class="nav-dropdown">
-            <a href="../apps/" class="nav-dropdown-trigger">Apps</a>
-            <div class="nav-dropdown-menu">
+            <a href="../apps/" class="nav-dropdown-trigger" aria-expanded="false">Apps</a>
+            <div class="nav-dropdown-menu" hidden>
               <a href="../apps/">All Apps</a>
               <a href="../apps/Pawmodoro/">Pawmodoro</a>
             </div>
           </div>
           <div class="nav-dropdown">
-              <a href="../games/" class="nav-dropdown-trigger">Games</a>
-              <div class="nav-dropdown-menu">
+              <a href="../games/" class="nav-dropdown-trigger" aria-expanded="false">Games</a>
+              <div class="nav-dropdown-menu" hidden>
                   <a href="../games/">All Games</a>
                   <a href="../games/carry_on/">Carry On</a>
                   <a href="../games/heavens_gate/">The Path to Heaven's Gate</a>
@@ -65,41 +65,43 @@
           </div>
           <a href="../about/">About</a>
           <a href="../contact/">Contact</a>
-        </div>
-        <div class="header-contact-icons">
+        </nav>
+        <div class="header-contact-icons" role="group" aria-label="Contact and social links">
           <a href="mailto:drowningindreamsstudios@gmail.com"
-            ><i class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i
+            aria-label="Email"
+            ><i aria-hidden="true" class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i
           ></a>
           <a href="https://www.youtube.com/@DrowningInDreamsStudios"
-            ><i class="fa-brands fa-youtube fa-xl header-icon"></i
+            aria-label="YouTube"
+            ><i aria-hidden="true" class="fa-brands fa-youtube fa-xl header-icon"></i
           ></a>
           <a href="https://discord.gg/UE38WuTykz"
-            ><i class="fa-brands fa-discord fa-xl header-icon"></i
+            aria-label="Discord"
+            ><i aria-hidden="true" class="fa-brands fa-discord fa-xl header-icon"></i
           ></a>
         </div>
-      </div>
-      <div class="main_body">
+      </header>
+      <main id="main-content" class="main_body">
+        <h1>Contact and support</h1>
         <div class="donation">
-          <h1>Consider donating!</h1>
+          <h2>Consider donating!</h2>
           <p>
             Please consider donating to help me start my business! All money
             will go towards DIDS, including paying for the website, future
             products and projects, and allow me to create full time.
           </p>
-          <a
-            href="https://www.paypal.com/donate/?hosted_button_id=52GGVBX9FYPL2"
-            ><button type="button" name="button">PayPal.me</button></a
-          >
-          <a href="https://Ko-fi.com/drowningindreamsstudios"
-            ><button type="button" name="button">Ko-fi</button></a
-          >
+          <a class="button-link" href="https://www.paypal.com/donate/?hosted_button_id=52GGVBX9FYPL2">Donate with PayPal</a>
+          <a class="button-link" href="https://Ko-fi.com/drowningindreamsstudios">Donate with Ko-fi</a>
         </div>
         <div class="contact_form">
-          <h1>Have a question? Contact us!</h1>
+          <h2>Have a question? Contact us!</h2>
+          <p id="contact-form-help">Complete the form below, or email us directly at <a href="mailto:drowningindreamsstudios@gmail.com">drowningindreamsstudios@gmail.com</a>.</p>
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSfTbQA3NeAT8TD3JeLAaWDmGvbU3-a6WcTKpGFNT-uXnVj2pw/viewform?embedded=true"
             width="640"
             height="689"
+            title="Contact form"
+            aria-describedby="contact-form-help"
             frameborder="0"
             marginheight="0"
             marginwidth="0"
@@ -107,11 +109,11 @@
           >
         </div>
         <div class="faq">
-          <h1>FAQ</h1>
-          <button class="faq_accordion">
+          <h2>Frequently asked questions</h2>
+          <button type="button" class="faq_accordion" aria-expanded="false" aria-controls="faq-products">
             What products or services do you provide?
           </button>
-          <div class="faq_accordion_panel">
+          <div id="faq-products" class="faq_accordion_panel" hidden>
             <p>
               At the moment nothing! All of our games are currently a work in
               progress. We're hoping to launch a shop in the future, but that's
@@ -122,8 +124,8 @@
               and Drowning In Dreams Studios merch such as t-shirts!
             </p>
           </div>
-          <button class="faq_accordion">Are you hiring?</button>
-          <div class="faq_accordion_panel">
+          <button type="button" class="faq_accordion" aria-expanded="false" aria-controls="faq-hiring">Are you hiring?</button>
+          <div id="faq-hiring" class="faq_accordion_panel" hidden>
             <p>
               No, we are not currently hiring anyone. Drowning In Dreams Studios
               is currently a place for Lauren to put her thoughts, ideas,
@@ -138,16 +140,16 @@
               bite!
             </p>
           </div>
-          <button class="faq_accordion">What is your privacy policy?</button>
-          <div class="faq_accordion_panel">
-            <h2>Privacy Policy for Drowning In Dreams Studios</h2>
+          <button type="button" class="faq_accordion" aria-expanded="false" aria-controls="faq-privacy">What is your privacy policy?</button>
+          <div id="faq-privacy" class="faq_accordion_panel" hidden>
+            <h3>Privacy Policy for Drowning In Dreams Studios</h3>
             <p>
               At Drowning In Dreams Studios, we are committed to protecting your
               privacy. This Privacy Policy outlines how we collect, use, and
               disclose information that we obtain from you through our website,
               games, and other products and services.
             </p>
-            <h2>Information We Collect</h2>
+            <h4>Information We Collect</h4>
             <p>
               We may collect personal information, such as your name, email
               address, and payment information, when you create an account on
@@ -156,7 +158,7 @@
               and browsing behavior, through the use of cookies and other
               tracking technologies.
             </p>
-            <h2>How We Use Your Information</h2>
+            <h4>How We Use Your Information</h4>
             <p>
               We may use your personal information to provide you with products
               and services, to communicate with you about your account, and to
@@ -165,7 +167,7 @@
               understand how users interact with our website, and to analyze
               trends and statistics.
             </p>
-            <h2>How We Share Your Information</h2>
+            <h4>How We Share Your Information</h4>
             <p>
               We do not sell or rent your personal information to third parties.
               We may share your information with our service providers who help
@@ -175,7 +177,7 @@
               to comply with legal obligations, to protect our rights and
               property, and to enforce our policies.
             </p>
-            <h2>Security</h2>
+            <h4>Security</h4>
             <p>
               We take reasonable measures to protect the security and integrity
               of your information, but no security measures are 100% effective
@@ -183,7 +185,7 @@
               not be accessed, disclosed, altered, or destroyed by a breach of
               our security measures.
             </p>
-            <h2>Your Choices</h2>
+            <h4>Your Choices</h4>
             <p>
               You can update or delete your account information at any time by
               logging into your account or contacting us at [insert contact
@@ -191,22 +193,22 @@
               emails by following the instructions in the email or contacting us
               at [insert contact information here].
             </p>
-            <h2>Changes to This Privacy Policy</h2>
+            <h4>Changes to This Privacy Policy</h4>
             <p>
               We may update this Privacy Policy from time to time by posting a
               new version on our website. Your continued use of our website and
               products after we post a revised Privacy Policy signifies your
               acceptance of the revised Privacy Policy.
             </p>
-            <h2>Contact Us</h2>
+            <h4>Contact Us</h4>
             <p>
               If you have any questions or concerns about our Privacy Policy or
               our use of your information, please contact us at
               drowningindreamsstudios@gmail.com.
             </p>
           </div>
-          <button class="faq_accordion">What is your copyright policy?</button>
-          <div class="faq_accordion_panel">
+          <button type="button" class="faq_accordion" aria-expanded="false" aria-controls="faq-copyright">What is your copyright policy?</button>
+          <div id="faq-copyright" class="faq_accordion_panel" hidden>
             <p>
               Copyright © 2023 Drowning In Dreams Studios. All rights reserved.
             </p>
@@ -243,16 +245,16 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="footer">
+      </main>
+      <footer class="footer">
         <section>
-          <h3>EXPLORE</h3>
+          <h2>EXPLORE</h2>
           <a class="footer-link" href="../about/">ABOUT</a><br />
           <a class="footer-link" href="../apps/">APPS</a><br />
           <a class="footer-link" href="../games/">GAMES</a><br />
         </section>
         <section>
-          <h3>SUPPORT</h3>
+          <h2>SUPPORT</h2>
           <a
             class="footer-link"
             href="https://www.redbubble.com/people/DIDStudios/shop?asc=u"
@@ -261,11 +263,11 @@
           <a class="footer-link" href="../contact/">DONATE</a><br />
         </section>
         <section>
-          <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+          <h2>SIGN UP FOR OUR NEWSLETTER</h2>
           <a class="footer-link" href="../contact/">CONTACT</a>
         </section>
         <section>
-          <h3>FOLLOW US</h3>
+          <h2>FOLLOW US</h2>
           <a class="footer-link" href="mailto:drowningindreamsstudios@gmail.com"
             >EMAIL</a
           ><br />
@@ -278,7 +280,6 @@
             >DISCORD</a
           >
         </section>
-      </div>
-    </body>
+      </footer>
   </body>
 </html>

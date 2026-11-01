@@ -1,14 +1,11 @@
-var acc = document.getElementsByClassName("faq_accordion");
-var i;
+document.querySelectorAll(".faq_accordion").forEach((button) => {
+  const panel = document.getElementById(button.getAttribute("aria-controls"));
+  if (!panel) return;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
+  button.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    button.classList.toggle("active", !expanded);
+    panel.hidden = expanded;
   });
-}
+});

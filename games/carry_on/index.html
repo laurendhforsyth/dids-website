@@ -15,33 +15,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Miss+Fajardose&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
   <script defer src="../../Assets/responsive_navigation.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-10TRMCFN3K');
+  </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-10TRMCFN3K');
-</script>
 <body>
-    <div class="header">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="header">
         <div class="header-dids-icon">
-            <a href="../../"><img src="../../Assets/Images/logo-transparent-png.png" class="dids-icon"></a>
+            <a href="../../" aria-label="Drowning In Dreams Studios home"><img src="../../Assets/Images/logo-transparent-png.png" class="dids-icon" alt=""></a>
         </div>
-        <div class="header-main-links">
+        <nav class="header-main-links" aria-label="Primary">
             <a href="../../">Home</a>
             <div class="nav-dropdown">
-                <a href="../../apps/" class="nav-dropdown-trigger">Apps</a>
-                <div class="nav-dropdown-menu">
+                <a href="../../apps/" class="nav-dropdown-trigger" aria-expanded="false">Apps</a>
+                <div class="nav-dropdown-menu" hidden>
                     <a href="../../apps/">All Apps</a>
                     <a href="../../apps/Pawmodoro/">Pawmodoro</a>
                 </div>
             </div>
             <div class="nav-dropdown">
-                <a href="../../games/" class="nav-dropdown-trigger">Games</a>
-                <div class="nav-dropdown-menu">
+                <a href="../../games/" class="nav-dropdown-trigger" aria-expanded="false">Games</a>
+                <div class="nav-dropdown-menu" hidden>
                     <a href="../../games/">All Games</a>
                     <a href="../../games/carry_on/">Carry On</a>
                     <a href="../../games/heavens_gate/">The Path to Heaven's Gate</a>
@@ -50,17 +49,18 @@
             </div>
             <a href="../../about/">About</a>
             <a href="../../contact/">Contact</a>
+        </nav>
+        <div class="header-contact-icons" role="group" aria-label="Contact and social links">
+            <a href="mailto:drowningindreamsstudios@gmail.com" aria-label="Email"><i aria-hidden="true" class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i></a>
+            <a href="https://www.youtube.com/@DrowningInDreamsStudios" aria-label="YouTube"><i aria-hidden="true" class="fa-brands fa-youtube fa-xl header-icon"></i></a>
+            <a href="https://discord.gg/UE38WuTykz" aria-label="Discord"><i aria-hidden="true" class="fa-brands fa-discord fa-xl header-icon"></i></a>
         </div>
-        <div class="header-contact-icons">
-            <a href="mailto:drowningindreamsstudios@gmail.com"><i class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i></a>
-            <a href="https://www.youtube.com/@DrowningInDreamsStudios"><i class="fa-brands fa-youtube fa-xl header-icon"></i></a>
-            <a href="https://discord.gg/UE38WuTykz"><i class="fa-brands fa-discord fa-xl header-icon"></i></a>
-        </div>
-    </div>
-    <div class="main_body">
+    </header>
+    <main id="main-content" class="main_body">
         <div class="intro">
-            <img src="../../Assets/Images/carry_on_cover_image_square.png">
-            <h3><em>A video game about grief and loss</em></h3>
+            <h1>Carry On</h1>
+            <img src="../../Assets/Images/carry_on_cover_image_square.png" alt="Carry On cover artwork">
+            <p class="intro-tagline"><em>A video game about grief and loss</em></p>
         </div>
         <div class="gdd">
             <h2>Game Design Document</h2>
@@ -130,29 +130,29 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
+    </main>
+    <footer class="footer">
         <section>
-            <h3>EXPLORE</h3>
+            <h2>EXPLORE</h2>
             <a class="footer-link" href="../../about/">ABOUT</a><br>
             <a class="footer-link" href="../../apps/">APPS</a><br>
             <a class="footer-link" href="../../games/">GAMES</a><br>
         </section>
         <section>
-            <h3>SUPPORT</h3>
+            <h2>SUPPORT</h2>
             <a class="footer-link" href="https://www.redbubble.com/people/DIDStudios/shop?asc=u">REDBUBBLE</a><br>
             <a class="footer-link" href="../../contact/">DONATE</a><br>
         </section>
         <section>
-            <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+            <h2>SIGN UP FOR OUR NEWSLETTER</h2>
             <a class="footer-link" href="../../contact/">CONTACT</a>
         </section>
         <section>
-            <h3>FOLLOW US</h3>
+            <h2>FOLLOW US</h2>
             <a class="footer-link" href="mailto:drowningindreamsstudios@gmail.com">EMAIL</a><br>
             <a class="footer-link" href="https://www.youtube.com/@DrowningInDreamsStudios">YOUTUBE</a><br>
             <a class="footer-link" href="https://discord.gg/UE38WuTykz">DISCORD</a>
             <p>version 1.4.3</p>
         </section>
-    </div>
+    </footer>
 </body>

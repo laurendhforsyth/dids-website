@@ -3,14 +3,33 @@ h1, h2 {
   padding: 50px 0px;
 }
 
+h3, h4 {
+  margin: 20px 0 8px;
+}
+
 p {
   padding: 10px clamp(16px, 5vw, 50px);
+}
+
+.button-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 2px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: var(--main-dark-blue);
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .faq_accordion {
   background-color: rgb(226, 229, 248);
   cursor: pointer;
   width: min(60%, 700px);
+  min-height: 44px;
   padding: 18px;
   text-align: left;
   border: none;
@@ -18,7 +37,6 @@ p {
   display: block;
   margin: 4px auto;
   color: #000;
-  transition: 0.4s;
 }
 
 .faq_accordion.active,
@@ -30,26 +48,15 @@ p {
   box-shadow: none;
 }
 
-.faq_accordion:after {
-  content: '\002B';
-  color: #000;
-  float: right;
-  margin-left: 5px;
-  font-weight: bold;
-}
-
-.active:after {
-  content: "\2212";
-}
-
 .faq_accordion_panel {
   width: min(60%, 700px);
   margin: 0 auto;
-  padding: 0 18px;
+  padding: 12px 18px;
   background-color: rgb(226, 229, 248);
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
+}
+
+.faq_accordion_panel[hidden] {
+  display: none;
 }
 
 .faq_accordion_panel,

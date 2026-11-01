@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const slides = carousel.querySelectorAll(".carousel-slide");
   const dotsContainer = carousel.querySelector(".carousel-dots");
+  const slidesContainer = carousel.querySelector(".carousel-slides");
   const INTERVAL_MS = 5000;
   let current = 0;
-  let timer = null;
 
   const dots = Array.from(slides, (slide, i) => {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "carousel-dot";
     dot.setAttribute("aria-label", `Show slide ${i + 1}`);
+    dot.setAttribute("aria-current", "false");
     dot.addEventListener("click", () => {
       show(i);
-      start();
     });
     dotsContainer.appendChild(dot);
     return dot;
@@ -27,37 +27,24 @@ document.addEventListener("DOMContentLoaded", () => {
     slides.forEach((s, i) => {
       s.classList.toggle("previous", i === previous && i !== current);
       s.classList.toggle("active", i === current);
+      const active = i === current;
+      s.setAttribute("aria-hidden", String(!active));
+      s.inert = !active;
     });
-    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === current);
+      d.setAttribute("aria-current", String(i === current));
+    });
   }
 
-  function go(index) {
-    show(index);
-    start();
-  }
-
-  carousel.querySelector(".carousel-arrow.prev").addEventListener("click", () => go(current - 1));
-  carousel.querySelector(".carousel-arrow.next").addEventListener("click", () => go(current + 1));
+  carousel.querySelector(".carousel-arrow.prev").addEventListener("click", () => show(current - 1));
+  carousel.querySelector(".carousel-arrow.next").addEventListener("click", () => show(current + 1));
   carousel.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") go(current - 1);
-    else if (e.key === "ArrowRight") go(current + 1);
+    if (e.key === "ArrowLeft") show(current - 1);
+    else if (e.key === "ArrowRight") show(current + 1);
   });
 
-  function start() {
-    stop();
-    timer = setInterval(() => show(current + 1), INTERVAL_MS);
-  }
-
-  function stop() {
-    if (timer) clearInterval(timer);
-    timer = null;
-  }
-
-  carousel.addEventListener("mouseenter", stop);
-  carousel.addEventListener("mouseleave", start);
-  carousel.addEventListener("focusin", stop);
-  carousel.addEventListener("focusout", start);
-
   show(0);
-  start();
+  slidesContainer.setAttribute("aria-live", "off");
+  setInterval(() => show(current + 1), INTERVAL_MS);
 });

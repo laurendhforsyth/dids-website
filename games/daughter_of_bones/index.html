@@ -12,34 +12,32 @@
     <link rel="stylesheet" href="../../Assets/dob_stylesheet.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script defer src="../../Assets/responsive_navigation.js"></script>
-</head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-10TRMCFN3K');
 </script>
+</head>
 <body>
-    <body>
-        <div class="header">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+        <header class="header">
             <div class="header-dids-icon">
-                <a href="../../"><img src="../../Assets/Images/logo-transparent-png.png" class="dids-icon"></a>
+                <a href="../../" aria-label="Drowning In Dreams Studios home"><img src="../../Assets/Images/logo-transparent-png.png" class="dids-icon" alt=""></a>
             </div>
-            <div class="header-main-links">
+            <nav class="header-main-links" aria-label="Primary">
                 <a href="../../">Home</a>
                 <div class="nav-dropdown">
-                    <a href="../../apps/" class="nav-dropdown-trigger">Apps</a>
-                    <div class="nav-dropdown-menu">
+                    <a href="../../apps/" class="nav-dropdown-trigger" aria-expanded="false">Apps</a>
+                    <div class="nav-dropdown-menu" hidden>
                         <a href="../../apps/">All Apps</a>
                         <a href="../../apps/Pawmodoro/">Pawmodoro</a>
                     </div>
                 </div>
                 <div class="nav-dropdown">
-                    <a href="../../games/" class="nav-dropdown-trigger">Games</a>
-                    <div class="nav-dropdown-menu">
+                    <a href="../../games/" class="nav-dropdown-trigger" aria-expanded="false">Games</a>
+                    <div class="nav-dropdown-menu" hidden>
                         <a href="../../games/">All Games</a>
                         <a href="../../games/carry_on/">Carry On</a>
                         <a href="../../games/heavens_gate/">The Path to Heaven's Gate</a>
@@ -48,42 +46,41 @@
                 </div>
                 <a href="../../about/">About</a>
                 <a href="../../contact/">Contact</a>
+            </nav>
+            <div class="header-contact-icons" role="group" aria-label="Contact and social links">
+                <a href="mailto:drowningindreamsstudios@gmail.com" aria-label="Email"><i aria-hidden="true" class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i></a>
+                <a href="https://www.youtube.com/@DrowningInDreamsStudios" aria-label="YouTube"><i aria-hidden="true" class="fa-brands fa-youtube fa-xl header-icon"></i></a>
+                <a href="https://discord.gg/UE38WuTykz" aria-label="Discord"><i aria-hidden="true" class="fa-brands fa-discord fa-xl header-icon"></i></a>
             </div>
-            <div class="header-contact-icons">
-                <a href="mailto:drowningindreamsstudios@gmail.com"><i class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i></a>
-                <a href="https://www.youtube.com/@DrowningInDreamsStudios"><i class="fa-brands fa-youtube fa-xl header-icon"></i></a>
-                <a href="https://discord.gg/UE38WuTykz"><i class="fa-brands fa-discord fa-xl header-icon"></i></a>
-            </div>
-        </div>
-        <div class="main_body">
+        </header>
+        <main id="main-content" class="main_body">
             <h1>Daughter of Bones</h1>
             <p>Welcome to the current project in progress! Daughter of bones is the very first game that Drowning In Dreams Studios is making. While the other projects are simply ideas that will be created, Daughter of Bones is currently in the beginning stages of development. </p>
             <p>Daughter of Bones is a 2D survival roguelike. There will be several upgrade trees for the player to choose from, different randomly generated maps at the start of each game, and different weapons to pick from to match your own playstyle! Fight through each round, gaining experience and surviving… Until you become the daughter of death and bones. </p>
             <p>You might have noticed the graphics don’t match up with the name! As of right now Daughter of Bones is still in the stages of becoming a prototype. The graphics are temporary, and will be re-done at a later date. Once the prototype is done, a in-depth art style document will be created that will outline all the details from the style to the UI. The prototype will have one character, one basic map, 2 or 3 different enemies with various attack patterns, 2 weapons to choose from (one ranged and one melee), along with the Main Menu, UI and a upgrade tree. </p>
             <p>Right now our aim is to have the base version of Daughter of Bones published by the end of 2023 at the latest. This base version of the game will at the very least include 2 maps, 3 weapons, 3 different upgrade trees to pick skills and upgrades from, and more. This list is subject to change without notice (so come back to this page to check out the progress and find more information in the future!).</p>
-        </div>
-        <div class="footer">
+        </main>
+        <footer class="footer">
             <section>
-                <h3>EXPLORE</h3>
+                <h2>EXPLORE</h2>
                 <a class="footer-link" href="../../about/">ABOUT</a><br>
             <a class="footer-link" href="../../apps/">APPS</a><br>
             <a class="footer-link" href="../../games/">GAMES</a><br>
             </section>
             <section>
-                <h3>SUPPORT</h3>
+                <h2>SUPPORT</h2>
                 <a class="footer-link" href="https://www.redbubble.com/people/DIDStudios/shop?asc=u">REDBUBBLE</a><br>
                 <a class="footer-link" href="../../contact/">DONATE</a><br>
             </section>
             <section>
-                <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+                <h2>SIGN UP FOR OUR NEWSLETTER</h2>
                 <a class="footer-link" href="../../contact/">CONTACT</a>
             </section>
             <section>
-                <h3>FOLLOW US</h3>
+                <h2>FOLLOW US</h2>
                 <a class="footer-link" href="mailto:drowningindreamsstudios@gmail.com">EMAIL</a><br>
                 <a class="footer-link" href="https://www.youtube.com/@DrowningInDreamsStudios">YOUTUBE</a><br>
                 <a class="footer-link" href="https://discord.gg/UE38WuTykz">DISCORD</a>
                 <p>version 1.4.3</p>
             </section>
-        </div>
-    </body>
+        </footer>

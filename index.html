@@ -24,40 +24,40 @@
     />
     <script defer src="./Assets/responsive_navigation.js"></script>
     <script defer src="./Assets/carousel.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-10TRMCFN3K");
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-10TRMCFN3K"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-10TRMCFN3K");
-  </script>
   <body>
-    <div class="header">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="header">
       <div class="header-dids-icon">
         <a href="./"
-          ><img src="Assets/Images/logo-transparent-png.png" class="dids-icon"
+          aria-label="Drowning In Dreams Studios home"
+          ><img src="Assets/Images/logo-transparent-png.png" class="dids-icon" alt=""
         /></a>
       </div>
-      <div class="header-main-links">
+      <nav class="header-main-links" aria-label="Primary">
         <a href="./">Home</a>
         <div class="nav-dropdown">
-          <a href="./apps/" class="nav-dropdown-trigger">Apps</a>
-          <div class="nav-dropdown-menu">
+          <a href="./apps/" class="nav-dropdown-trigger" aria-expanded="false">Apps</a>
+          <div class="nav-dropdown-menu" hidden>
             <a href="./apps/">All Apps</a>
             <a href="./apps/Pawmodoro/">Pawmodoro</a>
           </div>
         </div>
         <div class="nav-dropdown">
-            <a href="./games/" class="nav-dropdown-trigger">Games</a>
-            <div class="nav-dropdown-menu">
+            <a href="./games/" class="nav-dropdown-trigger" aria-expanded="false">Games</a>
+            <div class="nav-dropdown-menu" hidden>
                 <a href="./games/">All Games</a>
                 <a href="./games/carry_on/">Carry On</a>
                 <a href="./games/heavens_gate/">The Path to Heaven's Gate</a>
@@ -66,20 +66,20 @@
         </div>
         <a href="./about/">About</a>
         <a href="./contact/">Contact</a>
+      </nav>
+      <div class="header-contact-icons" role="group" aria-label="Contact and social links">
+        <a href="mailto:drowningindreamsstudios@gmail.com" aria-label="Email"
+          ><i aria-hidden="true" class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i
+        ></a>
+        <a href="https://www.youtube.com/@DrowningInDreamsStudios" aria-label="YouTube"
+          ><i aria-hidden="true" class="fa-brands fa-youtube fa-xl header-icon"></i
+        ></a>
+        <a href="https://discord.gg/UE38WuTykz" aria-label="Discord"
+          ><i aria-hidden="true" class="fa-brands fa-discord fa-xl header-icon"></i
+        ></a>
       </div>
-      <div class="header-contact-icons">
-        <a href="mailto:drowningindreamsstudios@gmail.com"
-          ><i class="fa-sharp fa-solid fa-envelope fa-xl header-icon"></i
-        ></a>
-        <a href="https://www.youtube.com/@DrowningInDreamsStudios"
-          ><i class="fa-brands fa-youtube fa-xl header-icon"></i
-        ></a>
-        <a href="https://discord.gg/UE38WuTykz"
-          ><i class="fa-brands fa-discord fa-xl header-icon"></i
-        ></a>
-      </div>
-    </div>
-    <div class="main_body index_main">
+    </header>
+    <main id="main-content" class="main_body index_main">
       <section class="home_body_text">
         <h1>Welcome to Drowning In Dreams Studios!</h1>
         <p>
@@ -98,40 +98,36 @@
           follow us on Twitter and YouTube for future updates and content!
         </p>
       </section>
-      <img class="home_body_image" src="Assets/Images/index_image.png" />
-    </div>
-    <section class="carousel" aria-label="Our games and apps">
-      <div class="carousel-slides">
-        <a class="carousel-slide active" href="./games/carry_on/">
-          <img src="Assets/Images/carry_on_cover_image_square.png" alt="Carry On" />
-          <span class="carousel-caption"><small>Game</small> Carry On</span>
+      <img class="home_body_image" src="Assets/Images/index_image.png" alt="Illustration representing Drowning In Dreams Studios" />
+    </main>
+    <section class="carousel" aria-label="Featured games and apps" aria-roledescription="carousel">
+      <div class="carousel-slides" aria-live="polite">
+        <a class="carousel-slide active" href="./games/carry_on/" aria-roledescription="slide" aria-label="Slide 1 of 4: Carry On">
+          <img src="Assets/Images/carry_on_cover_image_square.png" alt="" />
         </a>
-        <a class="carousel-slide" href="./games/heavens_gate/">
-          <img src="Assets/Images/heavens_gate_cover_image.jpg" alt="The Path to Heaven's Gate" />
-          <span class="carousel-caption"><small>Game</small> The Path to Heaven's Gate</span>
+        <a class="carousel-slide" href="./games/heavens_gate/" aria-roledescription="slide" aria-label="Slide 2 of 4: The Path to Heaven's Gate" aria-hidden="true" inert>
+          <img src="Assets/Images/heavens_gate_cover_image.jpg" alt="" />
         </a>
-        <a class="carousel-slide" href="./games/daughter_of_bones/">
-          <img src="Assets/Images/daughter_of_bones_cover_image.jpg" alt="Daughter of Bones" />
-          <span class="carousel-caption"><small>Game</small> Daughter of Bones</span>
+        <a class="carousel-slide" href="./games/daughter_of_bones/" aria-roledescription="slide" aria-label="Slide 3 of 4: Daughter of Bones" aria-hidden="true" inert>
+          <img src="Assets/Images/daughter_of_bones_cover_image.jpg" alt="" />
         </a>
-        <a class="carousel-slide" href="./apps/Pawmodoro/">
-          <img class="carousel-placeholder" src="Assets/Images/logo-transparent-png.png" alt="Pawmodoro" />
-          <span class="carousel-caption"><small>App</small> Pawmodoro</span>
+        <a class="carousel-slide" href="./apps/Pawmodoro/" aria-roledescription="slide" aria-label="Slide 4 of 4: Pawmodoro" aria-hidden="true" inert>
+          <img class="carousel-placeholder" src="Assets/Images/logo-transparent-png.png" alt="" />
         </a>
         <button type="button" class="carousel-arrow prev" aria-label="Previous slide">&#8249;</button>
         <button type="button" class="carousel-arrow next" aria-label="Next slide">&#8250;</button>
+        <div class="carousel-dots" role="group" aria-label="Choose a featured game or app"></div>
       </div>
-      <div class="carousel-dots"></div>
     </section>
-    <div class="footer">
+    <footer class="footer">
       <section>
-        <h3>EXPLORE</h3>
+        <h2>EXPLORE</h2>
         <a class="footer-link" href="./about/">ABOUT</a><br />
         <a class="footer-link" href="./apps/">APPS</a><br />
         <a class="footer-link" href="./games/">GAMES</a><br />
       </section>
       <section>
-        <h3>SUPPORT</h3>
+        <h2>SUPPORT</h2>
         <a
           class="footer-link"
           href="https://www.redbubble.com/people/DIDStudios/shop?asc=u"
@@ -140,11 +136,11 @@
         <a class="footer-link" href="./contact/">DONATE</a><br />
       </section>
       <section>
-        <h3>SIGN UP FOR OUR NEWSLETTER</h3>
+        <h2>SIGN UP FOR OUR NEWSLETTER</h2>
         <a class="footer-link" href="./contact/">CONTACT</a>
       </section>
       <section>
-        <h3>FOLLOW US</h3>
+        <h2>FOLLOW US</h2>
         <a class="footer-link" href="mailto:drowningindreamsstudios@gmail.com"
           >EMAIL</a
         ><br />
@@ -155,6 +151,6 @@
         ><br />
         <a class="footer-link" href="https://discord.gg/UE38WuTykz">DISCORD</a>
       </section>
-    </div>
+    </footer>
   </body>
 </html>

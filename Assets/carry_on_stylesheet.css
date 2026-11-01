@@ -6,9 +6,14 @@
   justify-content: center;
 }
 
-.intro h3, .intro h3 em {
+.intro-tagline,
+.intro-tagline em {
   font-size: 36px;
   font-family: "Tangerine", cursive !important;
+}
+
+.intro h1 {
+  padding: 0 0 20px;
 }
 
 .intro img {
